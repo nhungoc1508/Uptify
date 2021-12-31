@@ -1,0 +1,6 @@
+framework module Pods_Uptify_UptifyUITests {
+  umbrella header "Pods-Uptify-UptifyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

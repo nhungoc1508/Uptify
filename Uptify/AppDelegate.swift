@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SpotifyLogin.shared.configure(clientID: "fe9df09de79a44f7ac4a27aeeb46db3e", clientSecret: "7fe34b48e9a84aeea382d8471d76f0e5", redirectURL: URL(string: "uptify-app://callback")!)
         return true
     }
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        let handled = SpotifyLogin.shared.applicationOpenURL(url) { (error) in }
+//        return handled
+//    }
 
     // MARK: UISceneSession Lifecycle
 

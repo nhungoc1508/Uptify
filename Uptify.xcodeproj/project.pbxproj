@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CAB698CA4AC43D16EB48F22 /* Pods_Uptify_UptifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8161CA7E8E9052B9FD9882B1 /* Pods_Uptify_UptifyUITests.framework */; };
+		730132C77F9454C279050814 /* Pods_Uptify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EF4C3D56A1F1D8B265BA1F /* Pods_Uptify.framework */; };
+		DD9BA900E7ECD295626170CE /* Pods_UptifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40083C1B11DC3CFF8B7C91D3 /* Pods_UptifyTests.framework */; };
 		F6EE69EF277CD8C700EDF89C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE69EE277CD8C700EDF89C /* AppDelegate.swift */; };
 		F6EE69F1277CD8C700EDF89C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE69F0277CD8C700EDF89C /* SceneDelegate.swift */; };
 		F6EE69F3277CD8C700EDF89C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE69F2277CD8C700EDF89C /* ViewController.swift */; };
@@ -15,6 +18,8 @@
 		F6EE69FB277CD8C900EDF89C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EE69F9277CD8C900EDF89C /* LaunchScreen.storyboard */; };
 		F6EE6A06277CD8C900EDF89C /* UptifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A05277CD8C900EDF89C /* UptifyTests.swift */; };
 		F6EE6A11277CD8C900EDF89C /* UptifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A10277CD8C900EDF89C /* UptifyUITests.swift */; };
+		F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */; };
+		F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0174EF49DD85C9DC850C4C55 /* Pods-UptifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UptifyTests.debug.xcconfig"; path = "Target Support Files/Pods-UptifyTests/Pods-UptifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		34EF4C3D56A1F1D8B265BA1F /* Pods_Uptify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uptify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		359974A615D679823177438F /* Pods-Uptify-UptifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptify-UptifyUITests.release.xcconfig"; path = "Target Support Files/Pods-Uptify-UptifyUITests/Pods-Uptify-UptifyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3E39D5BE766B01C047010356 /* Pods-Uptify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptify.release.xcconfig"; path = "Target Support Files/Pods-Uptify/Pods-Uptify.release.xcconfig"; sourceTree = "<group>"; };
+		40083C1B11DC3CFF8B7C91D3 /* Pods_UptifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UptifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE15EB4C47E8C4E013596E4 /* Pods-Uptify-UptifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptify-UptifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Uptify-UptifyUITests/Pods-Uptify-UptifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		70B2E1D81944B4AE76BCB92D /* Pods-Uptify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uptify.debug.xcconfig"; path = "Target Support Files/Pods-Uptify/Pods-Uptify.debug.xcconfig"; sourceTree = "<group>"; };
+		8161CA7E8E9052B9FD9882B1 /* Pods_Uptify_UptifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uptify_UptifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9558172786600EA4368FECCB /* Pods-UptifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UptifyTests.release.xcconfig"; path = "Target Support Files/Pods-UptifyTests/Pods-UptifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6EE69EB277CD8C700EDF89C /* Uptify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uptify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EE69EE277CD8C700EDF89C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6EE69F0277CD8C700EDF89C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +63,8 @@
 		F6EE6A0C277CD8C900EDF89C /* UptifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UptifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EE6A10277CD8C900EDF89C /* UptifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptifyUITests.swift; sourceTree = "<group>"; };
 		F6EE6A12277CD8C900EDF89C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730132C77F9454C279050814 /* Pods_Uptify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9BA900E7ECD295626170CE /* Pods_UptifyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +88,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CAB698CA4AC43D16EB48F22 /* Pods_Uptify_UptifyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0B752F4067582CF79D3F8DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34EF4C3D56A1F1D8B265BA1F /* Pods_Uptify.framework */,
+				8161CA7E8E9052B9FD9882B1 /* Pods_Uptify_UptifyUITests.framework */,
+				40083C1B11DC3CFF8B7C91D3 /* Pods_UptifyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D99C2D272B1A63CFF73C038B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70B2E1D81944B4AE76BCB92D /* Pods-Uptify.debug.xcconfig */,
+				3E39D5BE766B01C047010356 /* Pods-Uptify.release.xcconfig */,
+				5CE15EB4C47E8C4E013596E4 /* Pods-Uptify-UptifyUITests.debug.xcconfig */,
+				359974A615D679823177438F /* Pods-Uptify-UptifyUITests.release.xcconfig */,
+				0174EF49DD85C9DC850C4C55 /* Pods-UptifyTests.debug.xcconfig */,
+				9558172786600EA4368FECCB /* Pods-UptifyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F6EE69E2277CD8C700EDF89C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +125,8 @@
 				F6EE6A04277CD8C900EDF89C /* UptifyTests */,
 				F6EE6A0F277CD8C900EDF89C /* UptifyUITests */,
 				F6EE69EC277CD8C700EDF89C /* Products */,
+				D99C2D272B1A63CFF73C038B /* Pods */,
+				C0B752F4067582CF79D3F8DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +150,8 @@
 				F6EE69F7277CD8C900EDF89C /* Assets.xcassets */,
 				F6EE69F9277CD8C900EDF89C /* LaunchScreen.storyboard */,
 				F6EE69FC277CD8C900EDF89C /* Info.plist */,
+				F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */,
+				F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */,
 			);
 			path = Uptify;
 			sourceTree = "<group>";
@@ -135,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6EE6A15277CD8C900EDF89C /* Build configuration list for PBXNativeTarget "Uptify" */;
 			buildPhases = (
+				4C6936CDEEBEFC9D63D93880 /* [CP] Check Pods Manifest.lock */,
 				F6EE69E7277CD8C700EDF89C /* Sources */,
 				F6EE69E8277CD8C700EDF89C /* Frameworks */,
 				F6EE69E9277CD8C700EDF89C /* Resources */,
+				27D826925449E1CC97315F6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6EE6A18277CD8C900EDF89C /* Build configuration list for PBXNativeTarget "UptifyTests" */;
 			buildPhases = (
+				A93B52B5C3D468AE1BD15ADF /* [CP] Check Pods Manifest.lock */,
 				F6EE69FD277CD8C900EDF89C /* Sources */,
 				F6EE69FE277CD8C900EDF89C /* Frameworks */,
 				F6EE69FF277CD8C900EDF89C /* Resources */,
@@ -170,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6EE6A1B277CD8C900EDF89C /* Build configuration list for PBXNativeTarget "UptifyUITests" */;
 			buildPhases = (
+				694516285D743B9599FB9DC5 /* [CP] Check Pods Manifest.lock */,
 				F6EE6A08277CD8C900EDF89C /* Sources */,
 				F6EE6A09277CD8C900EDF89C /* Frameworks */,
 				F6EE6A0A277CD8C900EDF89C /* Resources */,
+				FCE02BC0B3F1FD2184ECE66E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +304,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27D826925449E1CC97315F6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uptify/Pods-Uptify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uptify/Pods-Uptify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Uptify/Pods-Uptify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C6936CDEEBEFC9D63D93880 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Uptify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		694516285D743B9599FB9DC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Uptify-UptifyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A93B52B5C3D468AE1BD15ADF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UptifyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE02BC0B3F1FD2184ECE66E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uptify-UptifyUITests/Pods-Uptify-UptifyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uptify-UptifyUITests/Pods-Uptify-UptifyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Uptify-UptifyUITests/Pods-Uptify-UptifyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6EE69E7277CD8C700EDF89C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +415,8 @@
 				F6EE69F3277CD8C700EDF89C /* ViewController.swift in Sources */,
 				F6EE69EF277CD8C700EDF89C /* AppDelegate.swift in Sources */,
 				F6EE69F1277CD8C700EDF89C /* SceneDelegate.swift in Sources */,
+				F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */,
+				F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +589,7 @@
 		};
 		F6EE6A16277CD8C900EDF89C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70B2E1D81944B4AE76BCB92D /* Pods-Uptify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +608,7 @@
 		};
 		F6EE6A17277CD8C900EDF89C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E39D5BE766B01C047010356 /* Pods-Uptify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +627,7 @@
 		};
 		F6EE6A19277CD8C900EDF89C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0174EF49DD85C9DC850C4C55 /* Pods-UptifyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +649,7 @@
 		};
 		F6EE6A1A277CD8C900EDF89C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9558172786600EA4368FECCB /* Pods-UptifyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +671,7 @@
 		};
 		F6EE6A1C277CD8C900EDF89C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CE15EB4C47E8C4E013596E4 /* Pods-Uptify-UptifyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +691,7 @@
 		};
 		F6EE6A1D277CD8C900EDF89C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 359974A615D679823177438F /* Pods-Uptify-UptifyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
