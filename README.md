@@ -1,4 +1,5 @@
 # Uptify
+<p align="center"><img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Logo.png" width=500/></p>
 
 ## Table of Contents
 1. [Overview](#Overview)
