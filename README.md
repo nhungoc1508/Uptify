@@ -70,12 +70,12 @@ Uptify is an app for getting statistics of user's Spotify usage.
 * Detail View
     * → Category View
 
-## Wireframes
+## Wireframes and prototypes
 
-[Wireframe diagrams go here]
+[Dribble post](https://dribbble.com/shots/17184106-Uptify?utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share)
 
-### Interactive Prototype
-[Interactive prototypes go here]
+<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-0.png" width=600/>
+<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-1.png" width=600/>
 
 ## Schema 
 
