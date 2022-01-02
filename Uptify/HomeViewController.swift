@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = SpotifyLoginButton(viewController: self, scopes: [.userReadPrivate, .userReadEmail, .userFollowRead])
+        let button = SpotifyLoginButton(viewController: self, scopes: [.userReadPrivate, .userReadEmail, .userFollowRead, .userReadTop])
         self.view.addSubview(button)
         button.center = self.view.center
         
@@ -28,7 +28,8 @@ class HomeViewController: UIViewController {
                 // User is not logged in, show log in flow.
             } else {
                 let baseUrl = "https://api.spotify.com/v1"
-                let endpoint = "/me/following?type=artist"
+                // let endpoint = "/me/top/tracks?time_range=short_term"
+                let endpoint = "/tracks/6rrKbzJGGDlSZgLphopS49"
                 let url = URL(string: (baseUrl + endpoint))
                 var request = URLRequest(url: url!)
                 request.setValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")
