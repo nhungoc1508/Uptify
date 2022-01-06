@@ -54,15 +54,23 @@ class TimeTracksViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let viewController = segue.destination as! TopTracksViewController
+        if segue.identifier == "alltime" {
+            viewController.label = "all time"
+            viewController.topTracks = self.tracksData["top-tracks_all-time"] as! [[String:Any]]
+        } else if segue.identifier == "6months" {
+            viewController.label = "the past 6 months"
+            viewController.topTracks = self.tracksData["top-tracks_6-months"] as! [[String:Any]]
+        } else if segue.identifier == "month" {
+            viewController.label = "the past month"
+            viewController.topTracks = self.tracksData["top-tracks_month"] as! [[String:Any]]
+        }
     }
-    */
 
 }

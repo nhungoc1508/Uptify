@@ -16,6 +16,8 @@
 		F60444182787155300D60FA4 /* TimeTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60444172787155300D60FA4 /* TimeTracksViewController.swift */; };
 		F604441A278717DC00D60FA4 /* TopArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6044419278717DC00D60FA4 /* TopArtistsViewController.swift */; };
 		F604441C278719FE00D60FA4 /* TopArtistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F604441B278719FE00D60FA4 /* TopArtistsTableViewCell.swift */; };
+		F604441E27876E2D00D60FA4 /* TopTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F604441D27876E2D00D60FA4 /* TopTracksViewController.swift */; };
+		F6044420278771DA00D60FA4 /* TopTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F604441F278771DA00D60FA4 /* TopTracksTableViewCell.swift */; };
 		F681C4182786D210007E94C3 /* AnalyzingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F681C4172786D210007E94C3 /* AnalyzingViewController.swift */; };
 		F681C42D2786D4B0007E94C3 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F681C4272786D477007E94C3 /* Inter-Bold.ttf */; };
 		F681C42E2786D4B0007E94C3 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F681C42B2786D477007E94C3 /* Inter-ExtraLight.ttf */; };
@@ -71,6 +73,8 @@
 		F60444172787155300D60FA4 /* TimeTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTracksViewController.swift; sourceTree = "<group>"; };
 		F6044419278717DC00D60FA4 /* TopArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopArtistsViewController.swift; sourceTree = "<group>"; };
 		F604441B278719FE00D60FA4 /* TopArtistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopArtistsTableViewCell.swift; sourceTree = "<group>"; };
+		F604441D27876E2D00D60FA4 /* TopTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksViewController.swift; sourceTree = "<group>"; };
+		F604441F278771DA00D60FA4 /* TopTracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksTableViewCell.swift; sourceTree = "<group>"; };
 		F681C4172786D210007E94C3 /* AnalyzingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingViewController.swift; sourceTree = "<group>"; };
 		F681C4242786D473007E94C3 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		F681C4252786D477007E94C3 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				F60444172787155300D60FA4 /* TimeTracksViewController.swift */,
 				F6044419278717DC00D60FA4 /* TopArtistsViewController.swift */,
 				F604441B278719FE00D60FA4 /* TopArtistsTableViewCell.swift */,
+				F604441D27876E2D00D60FA4 /* TopTracksViewController.swift */,
+				F604441F278771DA00D60FA4 /* TopTracksTableViewCell.swift */,
 			);
 			path = Uptify;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				F6EE69F3277CD8C700EDF89C /* ViewController.swift in Sources */,
 				F6EE69EF277CD8C700EDF89C /* AppDelegate.swift in Sources */,
 				F60444102786E7E300D60FA4 /* CategoryViewController.swift in Sources */,
+				F604441E27876E2D00D60FA4 /* TopTracksViewController.swift in Sources */,
 				F60444162786FAA000D60FA4 /* TimeArtistsViewController.swift in Sources */,
 				F681C4182786D210007E94C3 /* AnalyzingViewController.swift in Sources */,
 				F604441A278717DC00D60FA4 /* TopArtistsViewController.swift in Sources */,
@@ -489,6 +496,7 @@
 				F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */,
 				F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */,
 				F60444182787155300D60FA4 /* TimeTracksViewController.swift in Sources */,
+				F6044420278771DA00D60FA4 /* TopTracksTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
