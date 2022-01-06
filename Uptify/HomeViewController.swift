@@ -9,20 +9,40 @@ import UIKit
 import SpotifyLogin
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet weak var loginBg: UIImageView!
+    let byzantine0_30 = UIColor(named: "Byzantine0")!.withAlphaComponent(0.3).cgColor
+    let steelBlue0 = UIColor(named: "SteelBlue0")!.cgColor
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loginBg.applyGradient(colors: [byzantine0_30, steelBlue0], stops: [0.0, 0.8])
         
-        let button = SpotifyLoginButton(viewController: self, scopes: [.userReadPrivate, .userReadEmail, .userFollowRead, .userReadTop])
+        let button = SpotifyLoginButton(viewController: self, scopes: [.userReadPrivate, .userReadEmail, .userReadTop])
+        button.applyShadow()
         self.view.addSubview(button)
-        button.center = self.view.center
+        button.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height-150)
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
 
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        SpotifyLogin.shared.getAccessToken { (accessToken, error) in
+            if error != nil {
+                // User is not logged in, show log in flow.
+            } else {
+                let tmp = segue.destination as! AnalyzingViewController
+                tmp.accessToken = accessToken!
+            }
+        }
+    }
+    
     @objc func loginSuccessful() {
+        print("Performing segue")
+        print("Logged in successfully")
+        performSegue(withIdentifier: "loginSuccess", sender: self)
+        /*
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
             if error != nil {
                 // User is not logged in, show log in flow.
@@ -47,10 +67,7 @@ class HomeViewController: UIViewController {
                 task.resume()
             }
         }
-    }
-    
-    @IBAction func onLogin(_ sender: Any) {
-        
+        */
     }
     
     /*
@@ -63,4 +80,38 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+extension UIImageView
+{
+    func applyGradient(colors: [CGColor], stops: [NSNumber]? = nil) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        gradientLayer.locations = stops
+        gradientLayer.frame = self.bounds
+        // gradientLayer.cornerRadius = 12
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
+
+extension UIButton
+{
+    func applyShadow() {
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
+        layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        layer.shadowOpacity = 1.0
+        layer.shadowRadius = 15
+    }
+    
+    func applyGradient(colors: [CGColor], corner: CGFloat = 0) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.frame = self.bounds
+        gradientLayer.cornerRadius = corner
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

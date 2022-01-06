@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ehz-RH-VJE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,25 +21,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OM5-6u-IK3">
-                                <rect key="frame" x="183" y="433" width="49" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="hXU-M2-DdH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LOG IN"/>
-                                <connections>
-                                    <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dlc-1V-Ff7"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hkX-gh-Dp2">
+                                <rect key="frame" x="67" y="305" width="280" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="60a-Hn-3J1"/>
+                                    <constraint firstAttribute="width" constant="280" id="yBi-30-deC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hkX-gh-Dp2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nQ8-tg-lDy"/>
+                            <constraint firstItem="hkX-gh-Dp2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tLT-6K-1h9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginBg" destination="hXU-M2-DdH" id="rgF-Kr-Qxp"/>
+                        <segue destination="AKG-hw-HbI" kind="show" identifier="loginSuccess" id="eQZ-cY-ktg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="76"/>
+            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
+        </scene>
+        <!--Analyzing View Controller-->
+        <scene sceneID="cIt-jW-mQY">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="AKG-hw-HbI" customClass="AnalyzingViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bfb-LY-XDS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Analyzing" translatesAutoresizingMaskIntoConstraints="NO" id="5Ad-sj-pZg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Analyzing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSb-ve-knr">
+                                <rect key="frame" x="100" y="427" width="215" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TPJ-w1-ocU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jA7-CZ-9WI"/>
+                    <connections>
+                        <outlet property="analyzingBg" destination="5Ad-sj-pZg" id="wD4-0w-lgU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcL-wD-iPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963.76811594202911" y="75.669642857142847"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="Lms-xh-62l">
+            <objects>
+                <viewController id="ehz-RH-VJE" customClass="CategoryViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="14x-bc-GPM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Category" translatesAutoresizingMaskIntoConstraints="NO" id="OcD-vY-mcf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-T9-acx">
+                                <rect key="frame" x="38" y="226" width="338" height="182"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="5Mj-JG-IBn"/>
+                                    <constraint firstAttribute="width" constant="338" id="nrq-mE-Pcv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="Top artists" backgroundImage="Category_Artists"/>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs0-qb-h5Z">
+                                <rect key="frame" x="38" y="468" width="338" height="182"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="BK7-iu-h45"/>
+                                    <constraint firstAttribute="width" constant="338" id="QXx-Pc-2n3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="Top tracks" backgroundImage="Category_Tracks"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yde-lh-Za6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vs0-qb-h5Z" firstAttribute="top" secondItem="X9k-T9-acx" secondAttribute="bottom" constant="60" id="BTB-38-DxA"/>
+                            <constraint firstItem="Vs0-qb-h5Z" firstAttribute="centerX" secondItem="14x-bc-GPM" secondAttribute="centerX" id="Ds0-Cd-oet"/>
+                            <constraint firstItem="X9k-T9-acx" firstAttribute="top" secondItem="yde-lh-Za6" secondAttribute="top" constant="182" id="XiJ-7Z-0T5"/>
+                            <constraint firstItem="X9k-T9-acx" firstAttribute="centerX" secondItem="14x-bc-GPM" secondAttribute="centerX" id="oIR-7c-GDp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryBg" destination="OcD-vY-mcf" id="bgc-o1-f7c"/>
+                        <outlet property="topArtists" destination="X9k-T9-acx" id="T7u-82-wcS"/>
+                        <outlet property="topTracks" destination="Vs0-qb-h5Z" id="Nl0-gg-X6o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rT-s2-fe0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811.594202898551" y="75.669642857142847"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Analyzing" width="2400" height="3600"/>
+        <image name="Category" width="2787" height="4180"/>
+        <image name="Category_Artists" width="2940" height="1960"/>
+        <image name="Category_Tracks" width="2831" height="1593"/>
+        <image name="Login" width="2920" height="4061"/>
+        <image name="Logo" width="873" height="286"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

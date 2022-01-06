@@ -79,5 +79,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Inter-Black.ttf</string>
+		<string>Inter-Bold.tff</string>
+		<string>Inter-ExtraBold.tff</string>
+		<string>Inter-ExtraLight.tff</string>
+		<string>Inter-Light.tff</string>
+		<string>Inter-Medium.tff</string>
+		<string>Inter-Regular.tff</string>
+		<string>Inter-SemiBold.tff</string>
+		<string>Inter-Thin.tff</string>
+	</array>
 </dict>
 </plist>
