@@ -23,10 +23,11 @@ class CategoryViewController: UIViewController {
         categoryBg.applyGradient(colors: [steelBlue0_40, mauve0], stops: [0.0, 0.8])
         topArtists.layer.cornerRadius = 30
         topArtists.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
-        topArtists.applyShadow()
+        // topArtists.applyShadow()
+        
         topTracks.layer.cornerRadius = 30
         topTracks.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
-        
+        // topTracks.applyShadow()
 
         // Do any additional setup after loading the view.
     }

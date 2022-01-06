@@ -93,16 +93,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-T9-acx">
-                                <rect key="frame" x="38" y="226" width="338" height="182"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="5Mj-JG-IBn"/>
-                                    <constraint firstAttribute="width" constant="338" id="nrq-mE-Pcv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
-                                <state key="normal" title="Top artists" backgroundImage="Category_Artists"/>
-                            </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vs0-qb-h5Z">
                                 <rect key="frame" x="38" y="468" width="338" height="182"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,6 +102,19 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <state key="normal" title="Top tracks" backgroundImage="Category_Tracks"/>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-T9-acx">
+                                <rect key="frame" x="38" y="226" width="338" height="182"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="5Mj-JG-IBn"/>
+                                    <constraint firstAttribute="width" constant="338" id="nrq-mE-Pcv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="Top artists" backgroundImage="Category_Artists"/>
+                                <connections>
+                                    <segue destination="QFG-Hi-uow" kind="show" id="hdQ-jE-z5l"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yde-lh-Za6"/>
@@ -133,6 +136,85 @@
             </objects>
             <point key="canvasLocation" x="1811.594202898551" y="75.669642857142847"/>
         </scene>
+        <!--Time Artists View Controller-->
+        <scene sceneID="Zs1-nq-MLl">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="QFG-Hi-uow" customClass="TimeArtistsViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0nv-6N-MN1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Time_Artists" translatesAutoresizingMaskIntoConstraints="NO" id="48f-fP-NXL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DF-cb-k6O">
+                                <rect key="frame" x="38" y="197" width="338" height="140"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="338" id="Fjg-wc-NxI"/>
+                                    <constraint firstAttribute="height" constant="140" id="mN9-A8-1OC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="All time" backgroundImage="Time_Artists_AllTime"/>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvW-cF-9zC">
+                                <rect key="frame" x="38" y="377" width="338" height="140"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="XV9-yn-MpN"/>
+                                    <constraint firstAttribute="width" constant="338" id="ZmP-Vh-rHI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <inset key="titleEdgeInsets" minX="-338" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Past 6 months" image="Time_Artists_Past6Months"/>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-Ic-rSa">
+                                <rect key="frame" x="38" y="557" width="338" height="140"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="1Xl-an-cuh"/>
+                                    <constraint firstAttribute="width" constant="338" id="HBG-wO-Chd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <inset key="titleEdgeInsets" minX="-338" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Past month" image="Time_Artists_PastMonth"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKK-47-sjA">
+                                <rect key="frame" x="33" y="59" width="19.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="onBack:" destination="QFG-Hi-uow" eventType="touchUpInside" id="9fT-XT-4SR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kFw-hN-rZc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9AR-Ic-rSa" firstAttribute="centerX" secondItem="0nv-6N-MN1" secondAttribute="centerX" id="9Bs-m9-Kn1"/>
+                            <constraint firstItem="gvW-cF-9zC" firstAttribute="top" secondItem="0DF-cb-k6O" secondAttribute="bottom" constant="40" id="Dgv-FM-opf"/>
+                            <constraint firstItem="SKK-47-sjA" firstAttribute="top" secondItem="kFw-hN-rZc" secondAttribute="top" constant="15" id="Hee-Ts-Yxg"/>
+                            <constraint firstItem="9AR-Ic-rSa" firstAttribute="top" secondItem="gvW-cF-9zC" secondAttribute="bottom" constant="40" id="JCh-F8-sLa"/>
+                            <constraint firstItem="gvW-cF-9zC" firstAttribute="centerX" secondItem="0nv-6N-MN1" secondAttribute="centerX" id="Qie-1w-XN4"/>
+                            <constraint firstItem="0DF-cb-k6O" firstAttribute="top" secondItem="kFw-hN-rZc" secondAttribute="top" constant="153" id="fLo-Fa-elh"/>
+                            <constraint firstItem="SKK-47-sjA" firstAttribute="leading" secondItem="kFw-hN-rZc" secondAttribute="leading" constant="33" id="j4C-ng-412"/>
+                            <constraint firstItem="0DF-cb-k6O" firstAttribute="centerX" secondItem="0nv-6N-MN1" secondAttribute="centerX" id="sBi-dW-lTr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mbr-RT-cpX"/>
+                    <connections>
+                        <outlet property="alltime" destination="0DF-cb-k6O" id="BId-4M-WJp"/>
+                        <outlet property="artistsBg" destination="48f-fP-NXL" id="qII-oB-Pet"/>
+                        <outlet property="past6months" destination="gvW-cF-9zC" id="h17-BI-bI2"/>
+                        <outlet property="pastmonth" destination="9AR-Ic-rSa" id="M89-5a-Zja"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJ1-Dw-OHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2642.0289855072465" y="75.669642857142847"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Analyzing" width="2400" height="3600"/>
@@ -141,6 +223,11 @@
         <image name="Category_Tracks" width="2831" height="1593"/>
         <image name="Login" width="2920" height="4061"/>
         <image name="Logo" width="873" height="286"/>
+        <image name="Time_Artists" width="2787" height="4181"/>
+        <image name="Time_Artists_AllTime" width="2940" height="1960"/>
+        <image name="Time_Artists_Past6Months" width="2889" height="2125"/>
+        <image name="Time_Artists_PastMonth" width="2938" height="1961"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
