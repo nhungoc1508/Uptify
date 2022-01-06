@@ -98,11 +98,11 @@ extension UIImageView
 
 extension UIButton
 {
-    func applyShadow() {
-        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75).cgColor
+    func applyShadow(radius: CGFloat? = 15) {
+        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.35).cgColor
         self.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 15
+        self.layer.shadowRadius = radius!
     }
     
     func applyGradient(colors: [CGColor], corner: CGFloat = 0) {

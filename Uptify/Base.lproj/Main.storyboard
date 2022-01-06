@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ehz-RH-VJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F92-XH-9bw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Inter-Black.ttf">
+            <string>Inter-Black</string>
+        </array>
         <array key="Inter-Bold.ttf">
             <string>Inter-Bold</string>
+        </array>
+        <array key="Inter-SemiBold.ttf">
+            <string>Inter-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -102,6 +109,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <state key="normal" title="Top tracks" backgroundImage="Category_Tracks"/>
+                                <connections>
+                                    <segue destination="aGf-Gu-OWM" kind="show" id="Mrr-QW-KT5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-T9-acx">
                                 <rect key="frame" x="38" y="226" width="338" height="182"/>
@@ -157,6 +167,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <state key="normal" title="All time" backgroundImage="Time_Artists_AllTime"/>
+                                <connections>
+                                    <segue destination="F92-XH-9bw" kind="show" id="O1A-hT-P5l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvW-cF-9zC">
                                 <rect key="frame" x="38" y="377" width="338" height="140"/>
@@ -168,6 +181,9 @@
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <inset key="titleEdgeInsets" minX="-338" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Past 6 months" image="Time_Artists_Past6Months"/>
+                                <connections>
+                                    <segue destination="F92-XH-9bw" kind="show" id="gBX-wh-Hru"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-Ic-rSa">
                                 <rect key="frame" x="38" y="557" width="338" height="140"/>
@@ -179,6 +195,9 @@
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <inset key="titleEdgeInsets" minX="-338" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Past month" image="Time_Artists_PastMonth"/>
+                                <connections>
+                                    <segue destination="F92-XH-9bw" kind="show" id="hlG-qq-GNQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKK-47-sjA">
                                 <rect key="frame" x="33" y="59" width="19.5" height="36"/>
@@ -215,7 +234,204 @@
             </objects>
             <point key="canvasLocation" x="2642.0289855072465" y="75.669642857142847"/>
         </scene>
+        <!--Top Artists View Controller-->
+        <scene sceneID="Ox3-0f-dt9">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="F92-XH-9bw" customClass="TopArtistsViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="icA-J7-2zm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TopArtists" translatesAutoresizingMaskIntoConstraints="NO" id="M7j-2f-9kw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-rA-UCZ">
+                                <rect key="frame" x="33" y="59" width="19.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="onBack:" destination="QFG-Hi-uow" eventType="touchUpInside" id="I1m-rW-fXR"/>
+                                    <action selector="onBack:" destination="aGf-Gu-OWM" eventType="touchUpInside" id="WSy-L3-ZRO"/>
+                                    <action selector="onBack:" destination="F92-XH-9bw" eventType="touchUpInside" id="ZXk-fv-nfU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your top artists of all time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-fV-ARm">
+                                <rect key="frame" x="98" y="84" width="218" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uRE-LO-G29"/>
+                                    <constraint firstAttribute="width" constant="218" id="uZt-uW-FgR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OdK-WO-VHd">
+                                <rect key="frame" x="0.0" y="168" width="414" height="728"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopArtistsTableViewCell" rowHeight="155" id="sw1-zs-cWC" customClass="TopArtistsTableViewCell" customModule="Uptify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sw1-zs-cWC" id="d7a-b7-yKJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnB-fW-j1A">
+                                                    <rect key="frame" x="52" y="20" width="310" height="115"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="310" id="3up-fO-DPX"/>
+                                                        <constraint firstAttribute="height" constant="115" id="Y4G-W4-upp"/>
+                                                    </constraints>
+                                                </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Category_Tracks" translatesAutoresizingMaskIntoConstraints="NO" id="023-yC-xJI">
+                                                    <rect key="frame" x="52" y="20" width="115" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP4-M8-OVe">
+                                                    <rect key="frame" x="177" y="67" width="20" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="MNM-Ij-Fjg"/>
+                                                        <constraint firstAttribute="width" constant="20" id="a9S-dL-uF2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Inter-Black" family="Inter" pointSize="20"/>
+                                                    <color key="textColor" name="Jade0"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of artist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-df-qRd">
+                                                    <rect key="frame" x="202" y="44" width="138" height="67"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="138" id="6DQ-5E-Pvq"/>
+                                                        <constraint firstAttribute="height" constant="67" id="gkC-K0-5JI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="20"/>
+                                                    <color key="textColor" name="SteelBlue0"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JnB-fW-j1A" firstAttribute="centerY" secondItem="d7a-b7-yKJ" secondAttribute="centerY" id="Ab0-RI-2rl"/>
+                                                <constraint firstItem="JnB-fW-j1A" firstAttribute="centerX" secondItem="d7a-b7-yKJ" secondAttribute="centerX" id="SIf-mu-cch"/>
+                                                <constraint firstItem="jP4-M8-OVe" firstAttribute="leading" secondItem="JnB-fW-j1A" secondAttribute="centerX" constant="-30" id="cw0-yc-cn8"/>
+                                                <constraint firstItem="jP4-M8-OVe" firstAttribute="centerY" secondItem="d7a-b7-yKJ" secondAttribute="centerY" id="exc-bK-Gkh"/>
+                                                <constraint firstItem="dgD-df-qRd" firstAttribute="leading" secondItem="jP4-M8-OVe" secondAttribute="trailing" constant="5" id="nTi-GD-Djf"/>
+                                                <constraint firstItem="dgD-df-qRd" firstAttribute="centerY" secondItem="d7a-b7-yKJ" secondAttribute="centerY" id="wHI-ZB-aHe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="JnB-fW-j1A" id="a8Z-RO-rVF"/>
+                                            <outlet property="name" destination="dgD-df-qRd" id="Zgf-cx-Ids"/>
+                                            <outlet property="rank" destination="jP4-M8-OVe" id="tSi-rp-J0z"/>
+                                            <outlet property="thumbnail" destination="023-yC-xJI" id="2Rj-zU-Gxj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zia-uC-cvJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Pt-rA-UCZ" firstAttribute="top" secondItem="zia-uC-cvJ" secondAttribute="top" constant="15" id="2cG-a5-7WR"/>
+                            <constraint firstItem="yVY-fV-ARm" firstAttribute="top" secondItem="zia-uC-cvJ" secondAttribute="top" constant="40" id="6o3-HE-ghO"/>
+                            <constraint firstItem="yVY-fV-ARm" firstAttribute="centerX" secondItem="icA-J7-2zm" secondAttribute="centerX" id="LJC-qC-ofN"/>
+                            <constraint firstItem="5Pt-rA-UCZ" firstAttribute="leading" secondItem="zia-uC-cvJ" secondAttribute="leading" constant="33" id="o88-wx-uSh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gtm-Gs-HPv"/>
+                    <connections>
+                        <outlet property="tableView" destination="OdK-WO-VHd" id="jLu-pt-def"/>
+                        <outlet property="topartistsBg" destination="M7j-2f-9kw" id="wc1-5p-bzS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeL-wJ-efS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3528.985507246377" y="75.669642857142847"/>
+        </scene>
+        <!--Time Tracks View Controller-->
+        <scene sceneID="UNZ-d4-CpR">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="aGf-Gu-OWM" customClass="TimeTracksViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8u2-NB-jjM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Time_Tracks" translatesAutoresizingMaskIntoConstraints="NO" id="s7K-9S-1pZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSc-vt-6Ah">
+                                <rect key="frame" x="38" y="197" width="338" height="140"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Nox-wo-THb"/>
+                                    <constraint firstAttribute="width" constant="338" id="vlu-bc-paP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="All time" backgroundImage="Time_Tracks_AllTime"/>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-PH-ZcJ">
+                                <rect key="frame" x="38" y="377" width="338" height="140"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="6Zs-zj-5DY"/>
+                                    <constraint firstAttribute="width" constant="338" id="Lnh-hQ-gwt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="Past 6 months" backgroundImage="Time_Tracks_Past6Months"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4E-ea-McU">
+                                <rect key="frame" x="33" y="59" width="19.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="onBack:" destination="aGf-Gu-OWM" eventType="touchUpInside" id="S1e-Pi-aMe"/>
+                                    <action selector="onBack:" destination="QFG-Hi-uow" eventType="touchUpInside" id="WH5-Ew-23x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQc-Iy-qox">
+                                <rect key="frame" x="38" y="557" width="338" height="140"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Fvt-Kw-zp4"/>
+                                    <constraint firstAttribute="width" constant="338" id="Wmt-vP-Yi8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                <state key="normal" title="Past month" backgroundImage="Time_Tracks_PastMonth"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DOv-5G-iYw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yQc-Iy-qox" firstAttribute="centerX" secondItem="8u2-NB-jjM" secondAttribute="centerX" id="0Ce-ZQ-nv6"/>
+                            <constraint firstItem="YSc-vt-6Ah" firstAttribute="top" secondItem="DOv-5G-iYw" secondAttribute="top" constant="153" id="ADM-AE-lzr"/>
+                            <constraint firstItem="dCw-PH-ZcJ" firstAttribute="top" secondItem="YSc-vt-6Ah" secondAttribute="bottom" constant="40" id="H9A-yJ-udb"/>
+                            <constraint firstItem="YSc-vt-6Ah" firstAttribute="centerX" secondItem="8u2-NB-jjM" secondAttribute="centerX" id="Pdx-wn-2aO"/>
+                            <constraint firstItem="A4E-ea-McU" firstAttribute="leading" secondItem="DOv-5G-iYw" secondAttribute="leading" constant="33" id="QNM-fa-qir"/>
+                            <constraint firstItem="dCw-PH-ZcJ" firstAttribute="centerX" secondItem="8u2-NB-jjM" secondAttribute="centerX" id="b20-TR-CyW"/>
+                            <constraint firstItem="yQc-Iy-qox" firstAttribute="top" secondItem="dCw-PH-ZcJ" secondAttribute="bottom" constant="40" id="rzF-1Y-laA"/>
+                            <constraint firstItem="A4E-ea-McU" firstAttribute="top" secondItem="DOv-5G-iYw" secondAttribute="top" constant="15" id="snI-Np-Ca4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CUu-wq-jHb"/>
+                    <connections>
+                        <outlet property="alltime" destination="YSc-vt-6Ah" id="MBf-c9-gxt"/>
+                        <outlet property="past6months" destination="dCw-PH-ZcJ" id="8oW-Fk-M8M"/>
+                        <outlet property="pastmonth" destination="yQc-Iy-qox" id="LMx-nX-AJx"/>
+                        <outlet property="tracksBg" destination="s7K-9S-1pZ" id="xT2-22-aXG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYS-Lr-ApL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2642" y="822"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hlG-qq-GNQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Analyzing" width="2400" height="3600"/>
         <image name="Category" width="2787" height="4180"/>
@@ -227,7 +443,18 @@
         <image name="Time_Artists_AllTime" width="2940" height="1960"/>
         <image name="Time_Artists_Past6Months" width="2889" height="2125"/>
         <image name="Time_Artists_PastMonth" width="2938" height="1961"/>
+        <image name="Time_Tracks" width="2787" height="4181"/>
+        <image name="Time_Tracks_AllTime" width="2943" height="4415"/>
+        <image name="Time_Tracks_Past6Months" width="2940" height="1960"/>
+        <image name="Time_Tracks_PastMonth" width="2940" height="1960"/>
+        <image name="TopArtists" width="3027" height="5380"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <namedColor name="Jade0">
+            <color red="0.6470588235294118" green="0.792156862745098" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SteelBlue0">
+            <color red="0.45882352941176469" green="0.55686274509803924" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
