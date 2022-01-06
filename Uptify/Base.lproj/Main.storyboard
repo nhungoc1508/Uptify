@@ -111,7 +111,7 @@
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <state key="normal" title="Top tracks" backgroundImage="Category_Tracks"/>
                                 <connections>
-                                    <segue destination="aGf-Gu-OWM" kind="show" id="Mrr-QW-KT5"/>
+                                    <segue destination="aGf-Gu-OWM" kind="show" identifier="showTracks" id="Mrr-QW-KT5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-T9-acx">
@@ -124,7 +124,7 @@
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <state key="normal" title="Top artists" backgroundImage="Category_Artists"/>
                                 <connections>
-                                    <segue destination="QFG-Hi-uow" kind="show" id="hdQ-jE-z5l"/>
+                                    <segue destination="QFG-Hi-uow" kind="show" identifier="showArtists" id="hdQ-jE-z5l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -170,7 +170,7 @@
                                 <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
                                 <state key="normal" title="All time" backgroundImage="Time_Artists_AllTime"/>
                                 <connections>
-                                    <segue destination="F92-XH-9bw" kind="show" id="O1A-hT-P5l"/>
+                                    <segue destination="F92-XH-9bw" kind="show" identifier="alltime" id="O1A-hT-P5l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvW-cF-9zC">
@@ -184,7 +184,7 @@
                                 <inset key="titleEdgeInsets" minX="-338" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Past 6 months" image="Time_Artists_Past6Months"/>
                                 <connections>
-                                    <segue destination="F92-XH-9bw" kind="show" id="gBX-wh-Hru"/>
+                                    <segue destination="F92-XH-9bw" kind="show" identifier="6months" id="gBX-wh-Hru"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AR-Ic-rSa">
@@ -198,7 +198,7 @@
                                 <inset key="titleEdgeInsets" minX="-338" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Past month" image="Time_Artists_PastMonth"/>
                                 <connections>
-                                    <segue destination="F92-XH-9bw" kind="show" id="hlG-qq-GNQ"/>
+                                    <segue destination="F92-XH-9bw" kind="show" identifier="month" id="hlG-qq-GNQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKK-47-sjA">
@@ -293,18 +293,18 @@
                                                     <rect key="frame" x="52" y="20" width="115" height="115"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP4-M8-OVe">
-                                                    <rect key="frame" x="177" y="67" width="20" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jP4-M8-OVe">
+                                                    <rect key="frame" x="177" y="67" width="30" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="MNM-Ij-Fjg"/>
-                                                        <constraint firstAttribute="width" constant="20" id="a9S-dL-uF2"/>
+                                                        <constraint firstAttribute="width" constant="30" id="a9S-dL-uF2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Inter-Black" family="Inter" pointSize="20"/>
                                                     <color key="textColor" name="Jade0"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of artist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-df-qRd">
-                                                    <rect key="frame" x="202" y="44" width="138" height="67"/>
+                                                    <rect key="frame" x="212" y="44" width="138" height="67"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="138" id="6DQ-5E-Pvq"/>
                                                         <constraint firstAttribute="height" constant="67" id="gkC-K0-5JI"/>
@@ -344,6 +344,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gtm-Gs-HPv"/>
                     <connections>
+                        <outlet property="screenLabel" destination="yVY-fV-ARm" id="kCO-SS-Fas"/>
                         <outlet property="tableView" destination="OdK-WO-VHd" id="jLu-pt-def"/>
                         <outlet property="topartistsBg" destination="M7j-2f-9kw" id="wc1-5p-bzS"/>
                     </connections>

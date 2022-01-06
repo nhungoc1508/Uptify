@@ -12,6 +12,7 @@ class TimeTracksViewController: UIViewController {
     @IBOutlet weak var alltime: UIButton!
     @IBOutlet weak var past6months: UIButton!
     @IBOutlet weak var pastmonth: UIButton!
+    var tracksData = Dictionary<String, Any>()
     
     let steelBlue0_40 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.4).cgColor
     let mauve0 = UIColor(named: "Mauve0")!.cgColor
@@ -21,6 +22,7 @@ class TimeTracksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tracksBg.applyGradient(colors: [steelBlue0_40, mauve0], stops: [0.4, 0.95])
         
         // alltime.layoutIfNeeded()

@@ -12,6 +12,18 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var topArtists: UIButton!
     @IBOutlet weak var topTracks: UIButton!
     var data = Dictionary<String, Any>()
+    let groups = [
+        "artists": [
+            "top-artists_all-time",
+            "top-artists_6-months",
+            "top-artists_month"
+        ],
+        "tracks": [
+            "top-tracks_all-time",
+            "top-tracks_6-months",
+            "top-tracks_month"
+        ]
+    ]
     
     let steelBlue0_40 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.4).cgColor
     let mauve0 = UIColor(named: "Mauve0")!.cgColor
@@ -21,7 +33,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(data)
+        print(data.count)
         categoryBg.applyGradient(colors: [steelBlue0_40, mauve0], stops: [0.0, 0.8])
         topArtists.layer.cornerRadius = 30
         topArtists.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
@@ -35,14 +47,23 @@ class CategoryViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showArtists" {
+            let viewController = segue.destination as! TimeArtistsViewController
+            for name in self.groups["artists"]! {
+                viewController.artistsData[name] = self.data[name]
+            }
+        } else if segue.identifier == "showTracks" {
+            let viewController = segue.destination as! TimeTracksViewController
+            for name in self.groups["tracks"]! {
+                viewController.tracksData[name] = self.data[name]
+            }
+        }
     }
-    */
 
 }

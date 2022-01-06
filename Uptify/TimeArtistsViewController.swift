@@ -12,6 +12,7 @@ class TimeArtistsViewController: UIViewController {
     @IBOutlet weak var alltime: UIButton!
     @IBOutlet weak var past6months: UIButton!
     @IBOutlet weak var pastmonth: UIButton!
+    var artistsData = Dictionary<String, Any>()
     
     let steelBlue0_40 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.4).cgColor
     let mauve0 = UIColor(named: "Mauve0")!.cgColor
@@ -21,6 +22,7 @@ class TimeArtistsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         artistsBg.applyGradient(colors: [steelBlue0_40, mauve0], stops: [0.4, 0.95])
         
         // alltime.layoutIfNeeded()
@@ -52,14 +54,17 @@ class TimeArtistsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let viewController = segue.destination as! TopArtistsViewController
+        if segue.identifier == "alltime" {
+            viewController.label = "all time"
+            viewController.topArtists = self.artistsData["top-artists_all-time"] as! [[String:Any]]
+        }
     }
-    */
 
 }

@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var topartistsBg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var screenLabel: UILabel!
+    var topArtists = [[String:Any]]()
+    var label = String()
     
     let jade0_40 = UIColor(named: "Jade0")!.withAlphaComponent(0.4).cgColor
     let steelBlue0 = UIColor(named: "SteelBlue0")!.cgColor
@@ -24,13 +28,15 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
+        screenLabel.text = "Your top artists of " + label
+        
         topartistsBg.applyGradient(colors: [jade0_40, steelBlue0], stops: [0.4, 0.95])
 
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        8
+        self.topArtists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,6 +49,16 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.button.applyShadow(radius: 7)
         cell.thumbnail.layer.cornerRadius = 15
         cell.thumbnail.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        
+        let artist = self.topArtists[indexPath.row]
+        if artist["images"] != nil {
+            let images = artist["images"] as! [[String:Any]]
+            let imageUrl = URL(string: images[0]["url"] as! String)
+            cell.thumbnail.af.setImage(withURL: imageUrl!)
+        }
+        cell.name.text = (artist["name"] as! String)
+        cell.rank.text = String(indexPath.row + 1)
+        
         return cell
     }
     

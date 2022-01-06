@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func loginSuccessful() {
-        print("Performing segue")
-        print("Logged in successfully")
+        // print("Performing segue")
+        // print("Logged in successfully")
         performSegue(withIdentifier: "loginSuccess", sender: self)
         /*
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
