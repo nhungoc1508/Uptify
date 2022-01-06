@@ -37,6 +37,7 @@ class AnalyzingViewController: UIViewController {
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.data[name] = dataDictionary["items"] as! Array<Dictionary<String, Any>>
+                self.performSegue(withIdentifier: "showCategory", sender: self)
             }
             // let topArtists = self.data["top-artists"] as! Array<Dictionary<String, Any>>
             // print(topArtists[0]["name"] as! String)
@@ -45,14 +46,14 @@ class AnalyzingViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let viewController = segue.destination as! CategoryViewController
+        viewController.data = self.data
     }
-    */
 
 }

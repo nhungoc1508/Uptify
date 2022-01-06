@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F92-XH-9bw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -82,6 +82,7 @@
                     <navigationItem key="navigationItem" id="jA7-CZ-9WI"/>
                     <connections>
                         <outlet property="analyzingBg" destination="5Ad-sj-pZg" id="wD4-0w-lgU"/>
+                        <segue destination="ehz-RH-VJE" kind="show" identifier="showCategory" id="nSa-wJ-WfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcL-wD-iPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,7 +92,7 @@
         <!--Category View Controller-->
         <scene sceneID="Lms-xh-62l">
             <objects>
-                <viewController id="ehz-RH-VJE" customClass="CategoryViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ehz-RH-VJE" customClass="CategoryViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="14x-bc-GPM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +137,7 @@
                             <constraint firstItem="X9k-T9-acx" firstAttribute="centerX" secondItem="14x-bc-GPM" secondAttribute="centerX" id="oIR-7c-GDp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EEz-FH-gq0"/>
                     <connections>
                         <outlet property="categoryBg" destination="OcD-vY-mcf" id="bgc-o1-f7c"/>
                         <outlet property="topArtists" destination="X9k-T9-acx" id="T7u-82-wcS"/>

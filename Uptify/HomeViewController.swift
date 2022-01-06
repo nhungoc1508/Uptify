@@ -32,8 +32,8 @@ class HomeViewController: UIViewController {
             if error != nil {
                 // User is not logged in, show log in flow.
             } else {
-                let tmp = segue.destination as! AnalyzingViewController
-                tmp.accessToken = accessToken!
+                let viewController = segue.destination as! AnalyzingViewController
+                viewController.accessToken = accessToken!
             }
         }
     }

@@ -11,6 +11,7 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryBg: UIImageView!
     @IBOutlet weak var topArtists: UIButton!
     @IBOutlet weak var topTracks: UIButton!
+    var data = Dictionary<String, Any>()
     
     let steelBlue0_40 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.4).cgColor
     let mauve0 = UIColor(named: "Mauve0")!.cgColor
@@ -20,6 +21,7 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(data)
         categoryBg.applyGradient(colors: [steelBlue0_40, mauve0], stops: [0.0, 0.8])
         topArtists.layer.cornerRadius = 30
         topArtists.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
