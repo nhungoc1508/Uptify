@@ -64,6 +64,12 @@ class TimeArtistsViewController: UIViewController {
         if segue.identifier == "alltime" {
             viewController.label = "all time"
             viewController.topArtists = self.artistsData["top-artists_all-time"] as! [[String:Any]]
+        } else if segue.identifier == "6months" {
+            viewController.label = "the past 6 months"
+            viewController.topArtists = self.artistsData["top-artists_6-months"] as! [[String:Any]]
+        } else if segue.identifier == "month" {
+            viewController.label = "the past month"
+            viewController.topArtists = self.artistsData["top-artists_month"] as! [[String:Any]]
         }
     }
 
