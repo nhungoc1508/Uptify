@@ -22,9 +22,13 @@ class HomeViewController: UIViewController {
         self.view.addSubview(button)
         button.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height-150)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,35 +43,9 @@ class HomeViewController: UIViewController {
     }
     
     @objc func loginSuccessful() {
-        // print("Performing segue")
-        // print("Logged in successfully")
+        print(self.presentedViewController)
+        self.navigationController?.popViewController(animated: true)
         performSegue(withIdentifier: "loginSuccess", sender: self)
-        /*
-        SpotifyLogin.shared.getAccessToken { (accessToken, error) in
-            if error != nil {
-                // User is not logged in, show log in flow.
-            } else {
-                let baseUrl = "https://api.spotify.com/v1"
-                // let endpoint = "/me/top/tracks?time_range=short_term"
-                let endpoint = "/tracks/6rrKbzJGGDlSZgLphopS49"
-                let url = URL(string: (baseUrl + endpoint))
-                var request = URLRequest(url: url!)
-                request.setValue("Bearer \(accessToken!)", forHTTPHeaderField: "Authorization")
-                
-                let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-                let task = session.dataTask(with: request) { (data, response, error) in
-                    // This will run when the network request returns
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else if let data = data {
-                        print(type(of: data))
-                        print(String(decoding: data, as: UTF8.self))
-                    }
-                }
-                task.resume()
-            }
-        }
-        */
     }
     
     /*

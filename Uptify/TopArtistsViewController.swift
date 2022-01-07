@@ -59,21 +59,53 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.name.text = (artist["name"] as! String)
         cell.rank.text = String(indexPath.row + 1)
         
+        // cell.button.addTarget(self, action: #selector(showArtistDetail), for: .touchUpInside)
+        // cell.button.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func didTapButton(sender: UIButton) {
+        // Fetch Item
+        if let superview = sender.superview, let cell = superview.superview as? TopArtistsTableViewCell {
+            if let indexPath = tableView.indexPath(for: cell) {
+                let artist = self.topArtists[indexPath.row]
+                print(artist["name"])
+            }
+        }
+        self.performSegue(withIdentifier: "showArtist", sender: self)
+    }
+    
+    @objc func showArtistDetail() {
+        self.performSegue(withIdentifier: "showArtist", sender: self)
     }
     
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let sendBtn = sender as! UIButton
+        if let superview = sendBtn.superview, let cell = superview.superview as? TopArtistsTableViewCell {
+            if let indexPath = tableView.indexPath(for: cell) {
+                let artist = self.topArtists[indexPath.row]
+                let viewController = segue.destination as! ArtistViewController
+                viewController.artist = artist
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        /*
+        let artist = self.topArtists[indexPath.row]
+        
+        let viewController = segue.destination as! ArtistViewController
+        viewController.artist = artist["name"] as! String
+        */
+    
     }
-    */
 
 }

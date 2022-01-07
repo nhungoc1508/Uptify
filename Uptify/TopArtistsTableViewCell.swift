@@ -13,6 +13,10 @@ class TopArtistsTableViewCell: UITableViewCell {
     @IBOutlet weak var rank: UILabel!
     @IBOutlet weak var name: UILabel!
     
+    @IBAction func onButtonTap(_ sender: Any) {
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

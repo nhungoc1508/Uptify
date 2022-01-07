@@ -28,6 +28,7 @@
 		F681C4332786D4B0007E94C3 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F681C4292786D477007E94C3 /* Inter-Thin.ttf */; };
 		F681C4342786D4B0007E94C3 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F681C4242786D473007E94C3 /* Inter-Black.ttf */; };
 		F681C4352786D4B0007E94C3 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F681C4252786D477007E94C3 /* Inter-Regular.ttf */; };
+		F6BC543F278827B500AC9321 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BC543E278827B500AC9321 /* ArtistViewController.swift */; };
 		F6EE69EF277CD8C700EDF89C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE69EE277CD8C700EDF89C /* AppDelegate.swift */; };
 		F6EE69F1277CD8C700EDF89C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE69F0277CD8C700EDF89C /* SceneDelegate.swift */; };
 		F6EE69F3277CD8C700EDF89C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE69F2277CD8C700EDF89C /* ViewController.swift */; };
@@ -85,6 +86,7 @@
 		F681C42A2786D477007E94C3 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
 		F681C42B2786D477007E94C3 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		F681C42C2786D477007E94C3 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F6BC543E278827B500AC9321 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		F6EE69EB277CD8C700EDF89C /* Uptify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uptify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EE69EE277CD8C700EDF89C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6EE69F0277CD8C700EDF89C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				F604441B278719FE00D60FA4 /* TopArtistsTableViewCell.swift */,
 				F604441D27876E2D00D60FA4 /* TopTracksViewController.swift */,
 				F604441F278771DA00D60FA4 /* TopTracksTableViewCell.swift */,
+				F6BC543E278827B500AC9321 /* ArtistViewController.swift */,
 			);
 			path = Uptify;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */,
 				F60444182787155300D60FA4 /* TimeTracksViewController.swift in Sources */,
 				F6044420278771DA00D60FA4 /* TopTracksTableViewCell.swift in Sources */,
+				F6BC543F278827B500AC9321 /* ArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

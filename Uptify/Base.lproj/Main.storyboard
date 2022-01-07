@@ -26,7 +26,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,6 +291,10 @@
                                                         <constraint firstAttribute="width" constant="310" id="3up-fO-DPX"/>
                                                         <constraint firstAttribute="height" constant="115" id="Y4G-W4-upp"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="onButtonTap:" destination="sw1-zs-cWC" eventType="touchUpInside" id="UlC-KC-I4K"/>
+                                                        <segue destination="4xj-g3-Tne" kind="show" identifier="showArtist" id="j5K-ln-dOt"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Category_Tracks" translatesAutoresizingMaskIntoConstraints="NO" id="023-yC-xJI">
                                                     <rect key="frame" x="52" y="20" width="115" height="115"/>
@@ -356,6 +360,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeL-wJ-efS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3528.985507246377" y="75.669642857142847"/>
+        </scene>
+        <!--Artist View Controller-->
+        <scene sceneID="NDQ-b4-bqx">
+            <objects>
+                <viewController id="4xj-g3-Tne" customClass="ArtistViewController" customModule="Uptify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pD3-EE-Niv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pVO-sp-gPM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FTl-fQ-mwe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6W-dX-u9M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4390" y="76"/>
         </scene>
         <!--Time Tracks View Controller-->
         <scene sceneID="UNZ-d4-CpR">
