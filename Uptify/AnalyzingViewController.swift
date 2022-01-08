@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 class AnalyzingViewController: UIViewController {
     @IBOutlet weak var analyzingBg: UIImageView!
@@ -25,6 +26,11 @@ class AnalyzingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         analyzingBg.applyGradient(colors: [jade1_40, rose1], stops: [0.0, 0.9])
+        SpotifyLogin.shared.getAccessToken { [weak self] (token, error) in
+            if error == nil, token != nil {
+                self?.accessToken = token as! String
+            }
+        }
         self.fetchAllData()
     }
     

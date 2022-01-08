@@ -61,6 +61,7 @@ class TimeArtistsViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let viewController = segue.destination as! TopArtistsViewController
+        viewController.topTracks = self.artistsData["top-tracks_all-time"] as! [[String:Any]]
         if segue.identifier == "alltime" {
             viewController.label = "all time"
             viewController.topArtists = self.artistsData["top-artists_all-time"] as! [[String:Any]]

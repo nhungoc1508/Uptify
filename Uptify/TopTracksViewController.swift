@@ -23,7 +23,8 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         let track = self.topTracks[0]
-        print(track)
+        let artists = track["artists"] as! [[String:Any]]
+        print(artists[0]["id"] as! String)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self

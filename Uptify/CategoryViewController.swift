@@ -16,7 +16,8 @@ class CategoryViewController: UIViewController {
         "artists": [
             "top-artists_all-time",
             "top-artists_6-months",
-            "top-artists_month"
+            "top-artists_month",
+            "top-tracks_all-time"
         ],
         "tracks": [
             "top-tracks_all-time",

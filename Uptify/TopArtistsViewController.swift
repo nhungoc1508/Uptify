@@ -14,6 +14,7 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var screenLabel: UILabel!
     var topArtists = [[String:Any]]()
+    var topTracks = [[String:Any]]()
     var label = String()
     
     let jade0_40 = UIColor(named: "Jade0")!.withAlphaComponent(0.4).cgColor
@@ -80,6 +81,19 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.performSegue(withIdentifier: "showArtist", sender: self)
     }
     
+    func filterTopTracks(artistId: String) -> [[String:Any]] {
+        var topTracksMine = [[String:Any]]()
+        for track in self.topTracks {
+            let artists = track["artists"] as! [[String:Any]]
+            for artist in artists {
+                if artistId == artist["id"] as! String {
+                    topTracksMine.append(track)
+                }
+            }
+        }
+        return topTracksMine
+    }
+    
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -93,7 +107,10 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
             if let indexPath = tableView.indexPath(for: cell) {
                 let artist = self.topArtists[indexPath.row]
                 let viewController = segue.destination as! ArtistViewController
-                viewController.artist = artist
+                let artistId = artist["id"] as! String
+                viewController.artistId = artistId
+                let topTracks = filterTopTracks(artistId: artistId)
+                viewController.topTracksMine = topTracks
             }
         }
         // Get the new view controller using segue.destination.
