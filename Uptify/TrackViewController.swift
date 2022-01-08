@@ -9,11 +9,16 @@ import UIKit
 import AlamofireImage
 import SpotifyLogin
 
-class TrackViewController: UIViewController {
+class TrackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     @IBOutlet weak var trackImage: UIImageView!
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var albumName: UILabel!
+    @IBOutlet weak var recTracksLabel: UILabel!
+    
+    @IBOutlet weak var artistsView: UICollectionView!
+    @IBOutlet weak var recTracksView: UICollectionView!
     
     var trackId = String()
     var track = Dictionary<String, Any>()
@@ -26,6 +31,16 @@ class TrackViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.artistsView.delegate = self
+        self.artistsView.dataSource = self
+        self.artistsView.reloadData()
+        self.artistsView.backgroundColor = UIColor.clear
+        
+        self.recTracksView.delegate = self
+        self.recTracksView.dataSource = self
+        self.recTracksView.reloadData()
+        self.recTracksView.backgroundColor = UIColor.clear
         
         self.bg.applyGradient(colors: [jade0_30, steelBlue3, steelBlue0], stops: [0.1, 0.4, 0.8])
         self.trackImage.alpha = 0
@@ -42,7 +57,7 @@ class TrackViewController: UIViewController {
         self.albumName.isHidden = false
         self.trackName.text = track["name"] as? String
         self.albumName.text = album["name"] as? String
-        self.artists = track["artists"] as! [[String:Any]]
+        // self.artists = track["artists"] as! [[String:Any]]
         
         SpotifyLogin.shared.getAccessToken { [weak self] (token, error) in
             if error == nil, token != nil {
@@ -73,6 +88,7 @@ class TrackViewController: UIViewController {
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.artists = dataDictionary["artists"] as! [[String:Any]]
+                self.artistsView.reloadData()
                 self.fetchRecommendations(accessToken: accessToken)
             }
         }
@@ -108,12 +124,45 @@ class TrackViewController: UIViewController {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                     if dataDictionary["tracks"] != nil {
                         self.recTracks = dataDictionary["tracks"] as! [[String:Any]]
-                        print(self.recTracks.count)
+                        self.recTracksView.reloadData()
+                    } else {
+                        self.recTracksLabel.isHidden = true
                     }
                 }
             }
             task.resume()
+        } else {
+            self.recTracksLabel.isHidden = true
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.artistsView {
+            return min(2, self.artists.count)
+        } else if collectionView == self.recTracksView {
+            return self.recTracks.count
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.artistsView.dequeueReusableCell(withReuseIdentifier: "ArtistViewCollectionViewCell", for: indexPath) as! ArtistViewCollectionViewCell
+        cell.trackImage.layer.cornerRadius = 12
+        if collectionView == self.artistsView {
+            let artist = self.artists[indexPath.item]
+            cell.trackName.text = artist["name"] as? String
+            let images = artist["images"] as! [[String:Any]]
+            let imageUrl = URL(string: images[0]["url"] as! String)
+            cell.trackImage.af.setImage(withURL: imageUrl!)
+        } else if collectionView == self.recTracksView {
+            let recTrack = self.recTracks[indexPath.item]
+            cell.trackName.text = recTrack["name"] as? String
+            let album = recTrack["album"] as! [String:Any]
+            let images = album["images"] as! [[String:Any]]
+            let imageUrl = URL(string: images[0]["url"] as! String)
+            cell.trackImage.af.setImage(withURL: imageUrl!)
+        }
+        return cell
     }
     
     @IBAction func onBack(_ sender: Any) {
