@@ -22,10 +22,6 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let track = self.topTracks[0]
-        let artists = track["artists"] as! [[String:Any]]
-        print(artists[0]["id"] as! String)
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
@@ -80,14 +76,20 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let sendBtn = sender as! UIButton
+        if let superview = sendBtn.superview, let cell = superview.superview as? TopTracksTableViewCell {
+            if let indexPath = tableView.indexPath(for: cell) {
+                let track = self.topTracks[indexPath.row]
+                let viewController = segue.destination as! TrackViewController
+                // let trackId = track["id"] as! String
+                viewController.track = track
+            }
+        }
     }
-    */
-
 }

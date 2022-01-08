@@ -45,6 +45,8 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.bg.applyGradient(colors: [rose0_30, rose3, byzantine0], stops: [0.1, 0.4, 0.8])
         
         self.artistImage.alpha = 0
+        self.artistName.isHidden = true
+        self.artistGenres.isHidden = true
         
         if self.topTracksMine.count == 0 {
             self.topTracks50Label.isHidden = true
@@ -52,7 +54,7 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         SpotifyLogin.shared.getAccessToken { [weak self] (token, error) in
             if error == nil, token != nil {
-                let accessToken = token as! String
+                let accessToken = token!
                 self?.fetchArtist(accessToken: accessToken)
                 self?.fetchTopTracks(accessToken: accessToken)
             }
@@ -96,9 +98,6 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 self.topTracksData = dataDictionary["tracks"] as! [[String:Any]]
                 self.topTracks.reloadData()
-//                let firstSong = self.topTracksData[0] as [String:Any]
-//                let firstSongAlbum = firstSong["album"] as! [String:Any]
-//                print(firstSongAlbum["images"])
             }
         }
         task.resume()
@@ -112,8 +111,10 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         artistImage.alpha = 1
         
+        artistName.isHidden = false
         artistName.text = artistData["name"] as? String
         
+        artistGenres.isHidden = false
         let genres = artistData["genres"] as! [String]
         if genres.count == 0 {
             artistGenres.isHidden = true

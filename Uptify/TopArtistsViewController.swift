@@ -113,16 +113,6 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
                 viewController.topTracksMine = topTracks
             }
         }
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-        /*
-        let artist = self.topArtists[indexPath.row]
-        
-        let viewController = segue.destination as! ArtistViewController
-        viewController.artist = artist["name"] as! String
-        */
-    
     }
 
 }
