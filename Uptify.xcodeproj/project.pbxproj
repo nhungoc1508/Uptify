@@ -41,6 +41,7 @@
 		F6EE6A11277CD8C900EDF89C /* UptifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A10277CD8C900EDF89C /* UptifyUITests.swift */; };
 		F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */; };
 		F6F13F18278ABA9B00715AFC /* TrackViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */; };
+		F6F13F1A278B567700715AFC /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6F13F19278B567700715AFC /* Keys.plist */; };
 		F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		F6EE6A12277CD8C900EDF89C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6F13F19278B567700715AFC /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 				F6A8C75F2789A31500A9C983 /* ArtistViewCollectionViewCell.swift */,
 				F6A8C7612789C89400A9C983 /* TrackViewController.swift */,
 				F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */,
+				F6F13F19278B567700715AFC /* Keys.plist */,
 			);
 			path = Uptify;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F13F1A278B567700715AFC /* Keys.plist in Resources */,
 				F6EE69FB277CD8C900EDF89C /* LaunchScreen.storyboard in Resources */,
 				F681C4322786D4B0007E94C3 /* Inter-Light.ttf in Resources */,
 				F681C42E2786D4B0007E94C3 /* Inter-ExtraLight.ttf in Resources */,
