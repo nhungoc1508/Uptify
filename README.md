@@ -25,15 +25,29 @@ Uptify is an app for getting statistics of user's Spotify usage.
 
 **Required Must-have Stories**
 
-* User can log in with their Spotify account
-* User can see information from different time windows: last month, last 6 months, all time
-* User can see their top artists
-* User can see their top individual tracks
+- [x] User can log in with their Spotify account
+
+<img src="https://media.giphy.com/media/YniAnGLz5J7dedKzpF/giphy.gif" width=250></img>
+
+- [x] User can see information from different time windows: last month, last 6 months, all time
+- [x] User can see their top artists
+
+<img src="https://media.giphy.com/media/RWUfeM1ZXq8TM9GAld/giphy.gif" width=250></img>
+
+- [x] User can see their top individual tracks
+
+<img src="https://media.giphy.com/media/4o8WLbIQB7p61NTkzv/giphy.gif" width=250></img>
 
 **Optional Nice-to-have Stories**
+- [x] User can see details of an artist
+- [x] User can see details of a track
+- [x] User can get recommended tracks based on a track, its artists, and their genres
 
-* User can get recommendations of artists based on their top artists
-* User can get recommendations of tracks based on their top tracks
+<img src="https://media.giphy.com/media/Flw0rlYTlnj0KA136M/giphy.gif" width=250></img>
+<img src="https://media.giphy.com/media/WYEh4fO8Pa9k2rr6lC/giphy.gif" width=250></img>
+
+- [ ] User can get recommendations of artists based on their top artists
+- [ ] User can get recommendations of tracks based on their top tracks
 
 **Nice-to-have Stories that are not yet possible with Spotify API**
 
@@ -74,8 +88,8 @@ Uptify is an app for getting statistics of user's Spotify usage.
 
 [Dribble post](https://dribbble.com/shots/17184106-Uptify?utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=nhungoc1508&utm_content=Uptify&utm_medium=Social_Share)
 
-<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-0.png" width=600/>
-<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-1.png" width=600/>
+<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-0.png" width=800/>
+<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-1.png" width=800/>
 
 ## Schema 
 
