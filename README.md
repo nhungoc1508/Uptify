@@ -3,9 +3,10 @@
 
 ## Table of Contents
 1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
+2. [Product Spec](#Product-Spec)
+3. [Wireframes](#Wireframes)
+4. [Designs](#Designs)
+5. [Schema](#Schema)
 
 ## Overview
 ### Description
@@ -90,6 +91,10 @@ Uptify is an app for getting statistics of user's Spotify usage.
 
 <img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-0.png" width=800/>
 <img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Prototype-1.png" width=800/>
+
+## Designs
+
+<img src="https://github.com/nhungoc1508/Uptify/blob/main/Assets/Design.png" width=800></img>
 
 ## Schema 
 
