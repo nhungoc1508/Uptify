@@ -111,6 +111,7 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
                 viewController.artistId = artistId
                 let topTracks = filterTopTracks(artistId: artistId)
                 viewController.topTracksMine = topTracks
+                viewController.topTracksAll50 = self.topTracks
             }
         }
     }

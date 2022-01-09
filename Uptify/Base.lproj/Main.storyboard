@@ -474,6 +474,7 @@
                                         <connections>
                                             <outlet property="trackImage" destination="k2M-az-wZr" id="6Wh-82-F0k"/>
                                             <outlet property="trackName" destination="bX8-X9-I2Q" id="z27-Y8-T3q"/>
+                                            <segue destination="BMO-Z9-dh0" kind="show" identifier="showTrack50" id="Dr2-tL-tZn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -524,6 +525,7 @@
                                         <connections>
                                             <outlet property="trackImage" destination="jkV-CH-Kmv" id="acl-gp-d8T"/>
                                             <outlet property="trackName" destination="H2f-tB-smo" id="t4W-vg-X5b"/>
+                                            <segue destination="BMO-Z9-dh0" kind="show" identifier="showTrack" id="kGN-IA-TdT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -722,7 +724,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of track that is long" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtU-sd-TVR">
-                                                    <rect key="frame" x="212" y="33.5" width="138" height="48.5"/>
+                                                    <rect key="frame" x="212" y="34" width="138" height="47"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="138" id="NDp-c2-ZP7"/>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="75" id="gs1-J7-bIg"/>
@@ -733,7 +735,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of artist that is long" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIq-XG-7jG">
-                                                    <rect key="frame" x="212" y="85" width="138" height="36.5"/>
+                                                    <rect key="frame" x="212" y="84" width="138" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="4GC-2p-Crt"/>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="Cli-02-SKA"/>
@@ -1007,6 +1009,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Dr2-tL-tZn"/>
         <segue reference="WzG-fW-KXQ"/>
         <segue reference="XQv-E4-uTE"/>
         <segue reference="hlG-qq-GNQ"/>

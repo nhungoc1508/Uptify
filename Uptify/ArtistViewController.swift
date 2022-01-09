@@ -15,6 +15,7 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
     var artistData = Dictionary<String, Any>()
     var topTracksData = [[String:Any]]()
     var topTracksMine = [[String:Any]]()
+    var topTracksAll50 = [[String:Any]]()
     
     @IBOutlet weak var artistImage: UIImageView!
     @IBOutlet weak var bg: UIImageView!
@@ -157,14 +158,25 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.dismiss(animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let cell = sender as! ArtistViewCollectionViewCell
+        let collectionView = cell.superview as! UICollectionView
+        var track = [String:Any]()
+        if collectionView == self.topTracks {
+            let indexPath = self.topTracks.indexPath(for: cell)!
+            track = self.topTracksData[indexPath.item]
+        } else if collectionView == self.topTracks50 {
+            let indexPath = self.topTracks50.indexPath(for: cell)!
+            track = self.topTracksMine[indexPath.item]
+        }
+        let viewController = segue.destination as! TrackViewController
+        viewController.track = track
+        viewController.topTracksAll50 = self.topTracksAll50
     }
-    */
 
 }

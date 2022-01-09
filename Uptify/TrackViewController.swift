@@ -24,6 +24,7 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
     var track = Dictionary<String, Any>()
     var artists = [[String:Any]]()
     var recTracks = [[String:Any]]()
+    var topTracksAll50 = [[String:Any]]()
     
     let jade0_30 = UIColor(named: "Jade0")!.withAlphaComponent(0.3).cgColor
     let steelBlue3 = UIColor(named: "SteelBlue3")!.cgColor
@@ -168,6 +169,19 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     }
     
+    func filterTopTracks(artistId: String) -> [[String:Any]] {
+        var topTracksMine = [[String:Any]]()
+        for track in self.topTracksAll50 {
+            let artists = track["artists"] as! [[String:Any]]
+            for artist in artists {
+                if artistId == artist["id"] as! String {
+                    topTracksMine.append(track)
+                }
+            }
+        }
+        return topTracksMine
+    }
+    
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -189,7 +203,11 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
             let indexPath = self.artistsView.indexPath(for: cell)!
             let artist = self.artists[indexPath.item]
             let viewController = segue.destination as! ArtistViewController
-            viewController.artistId = artist["id"] as! String
+            let artistId = artist["id"] as! String
+            viewController.artistId = artistId
+            let topTracks = filterTopTracks(artistId: artistId)
+            viewController.topTracksMine = topTracks
+            viewController.topTracksAll50 = self.topTracksAll50
         }
     }
 
