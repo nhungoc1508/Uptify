@@ -40,6 +40,7 @@
 		F6EE6A06277CD8C900EDF89C /* UptifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A05277CD8C900EDF89C /* UptifyTests.swift */; };
 		F6EE6A11277CD8C900EDF89C /* UptifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A10277CD8C900EDF89C /* UptifyUITests.swift */; };
 		F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */; };
+		F6F13F18278ABA9B00715AFC /* TrackViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */; };
 		F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		F6EE6A10277CD8C900EDF89C /* UptifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptifyUITests.swift; sourceTree = "<group>"; };
 		F6EE6A12277CD8C900EDF89C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +225,7 @@
 				F6BC543E278827B500AC9321 /* ArtistViewController.swift */,
 				F6A8C75F2789A31500A9C983 /* ArtistViewCollectionViewCell.swift */,
 				F6A8C7612789C89400A9C983 /* TrackViewController.swift */,
+				F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */,
 			);
 			path = Uptify;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				F604441E27876E2D00D60FA4 /* TopTracksViewController.swift in Sources */,
 				F60444162786FAA000D60FA4 /* TimeArtistsViewController.swift in Sources */,
 				F681C4182786D210007E94C3 /* AnalyzingViewController.swift in Sources */,
+				F6F13F18278ABA9B00715AFC /* TrackViewCollectionViewCell.swift in Sources */,
 				F604441A278717DC00D60FA4 /* TopArtistsViewController.swift in Sources */,
 				F6A8C7622789C89400A9C983 /* TrackViewController.swift in Sources */,
 				F60444142786F88400D60FA4 /* CustomButton.swift in Sources */,

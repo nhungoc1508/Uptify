@@ -146,37 +146,51 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.artistsView.dequeueReusableCell(withReuseIdentifier: "ArtistViewCollectionViewCell", for: indexPath) as! ArtistViewCollectionViewCell
-        cell.trackImage.layer.cornerRadius = 12
         if collectionView == self.artistsView {
+            let cell = self.artistsView.dequeueReusableCell(withReuseIdentifier: "TrackViewCollectionViewCell", for: indexPath) as! TrackViewCollectionViewCell
             let artist = self.artists[indexPath.item]
-            cell.trackName.text = artist["name"] as? String
+            cell.artistName.text = artist["name"] as? String
             let images = artist["images"] as! [[String:Any]]
             let imageUrl = URL(string: images[0]["url"] as! String)
-            cell.trackImage.af.setImage(withURL: imageUrl!)
-        } else if collectionView == self.recTracksView {
+            cell.artistImage.layer.cornerRadius = 12
+            cell.artistImage.af.setImage(withURL: imageUrl!)
+            return cell
+        } else {
+            let cell = self.recTracksView.dequeueReusableCell(withReuseIdentifier: "ArtistViewCollectionViewCell", for: indexPath) as! ArtistViewCollectionViewCell
             let recTrack = self.recTracks[indexPath.item]
             cell.trackName.text = recTrack["name"] as? String
             let album = recTrack["album"] as! [String:Any]
             let images = album["images"] as! [[String:Any]]
             let imageUrl = URL(string: images[0]["url"] as! String)
+            cell.trackImage.layer.cornerRadius = 12
             cell.trackImage.af.setImage(withURL: imageUrl!)
+            return cell
         }
-        return cell
     }
     
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showTrack" {
+            let cell = sender as! ArtistViewCollectionViewCell
+            let indexPath = self.recTracksView.indexPath(for: cell)!
+            let recTrack = self.recTracks[indexPath.item]
+            let viewController = segue.destination as! TrackViewController
+            viewController.track = recTrack
+        } else if segue.identifier == "showArtist" {
+            let cell = sender as! TrackViewCollectionViewCell
+            let indexPath = self.artistsView.indexPath(for: cell)!
+            let artist = self.artists[indexPath.item]
+            let viewController = segue.destination as! ArtistViewController
+            viewController.artistId = artist["id"] as! String
+        }
     }
-    */
 
 }
