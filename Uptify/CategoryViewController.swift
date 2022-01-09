@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryBg: UIImageView!
     @IBOutlet weak var topArtists: UIButton!
     @IBOutlet weak var topTracks: UIButton!
+    @IBOutlet weak var logOut: UIButton!
     var data = Dictionary<String, Any>()
     let groups = [
         "artists": [
@@ -32,9 +34,12 @@ class CategoryViewController: UIViewController {
     let steelBlue0_75 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.75).cgColor
     let jade0_75 = UIColor(named: "Jade0")!.withAlphaComponent(0.75).cgColor
     
+    let byzantine0 = UIColor(named: "Byzantine0")!.cgColor
+    let steelBlue0 = UIColor(named: "SteelBlue0")!.cgColor
+    let jade0 = UIColor(named: "Jade0")!.cgColor
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(data.count)
         categoryBg.applyGradient(colors: [steelBlue0_40, mauve0], stops: [0.0, 0.8])
         topArtists.layer.cornerRadius = 30
         topArtists.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
@@ -43,6 +48,9 @@ class CategoryViewController: UIViewController {
         topTracks.layer.cornerRadius = 30
         topTracks.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
         // topTracks.applyShadow()
+        
+        logOut.layer.cornerRadius = 12
+        logOut.applyGradient(colors: [byzantine0, steelBlue0], corner: 12)
 
         // Do any additional setup after loading the view.
     }
@@ -65,6 +73,16 @@ class CategoryViewController: UIViewController {
                 viewController.tracksData[name] = self.data[name]
             }
         }
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        SpotifyLogin.shared.logout()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let homeViewController = main.instantiateViewController(identifier: "HomeViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        UIView.transition(with: delegate.window!, duration: 0.5, options: UIView.AnimationOptions.transitionFlipFromLeft, animations: {
+            delegate.window?.rootViewController = homeViewController
+        }, completion: nil)
     }
 
 }

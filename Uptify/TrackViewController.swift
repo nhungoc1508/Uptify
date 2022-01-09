@@ -60,6 +60,10 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.albumName.text = album["name"] as? String
         // self.artists = track["artists"] as! [[String:Any]]
         
+        if self.topTracksAll50.count == 0 {
+            
+        }
+        
         SpotifyLogin.shared.getAccessToken { [weak self] (token, error) in
             if error == nil, token != nil {
                 let accessToken = token!

@@ -55,9 +55,10 @@ class AnalyzingViewController: UIViewController {
             task.resume()
         }
         dispatchGroup.notify(queue: DispatchQueue.main) {
-            print("All data fetched")
-            self.performSegue(withIdentifier: "showCategory", sender: self)
-            // let artistsAll = self.data["top-artists_all-time"] as! Array<Dictionary<String, Any>>
+            let seconds = 0.5
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.performSegue(withIdentifier: "showCategory", sender: self)
+            }
         }
     }
     

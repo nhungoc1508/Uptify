@@ -14,6 +14,7 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var screenLabel: UILabel!
     var topTracks = [[String:Any]]()
+    var topTracksAll50 = [[String:Any]]()
     var label = String()
     
     let rose0_40 = UIColor(named: "Rose0")!.withAlphaComponent(0.4).cgColor
@@ -89,6 +90,7 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
                 let viewController = segue.destination as! TrackViewController
                 // let trackId = track["id"] as! String
                 viewController.track = track
+                viewController.topTracksAll50 = self.topTracksAll50
             }
         }
     }

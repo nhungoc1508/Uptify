@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     let steelBlue0 = UIColor(named: "SteelBlue0")!.cgColor
     
     override func viewDidLoad() {
+        self.modalPresentationStyle = .fullScreen
         super.viewDidLoad()
         self.loginBg.applyGradient(colors: [byzantine0_30, steelBlue0], stops: [0.0, 0.8])
         
@@ -22,30 +23,32 @@ class HomeViewController: UIViewController {
         self.view.addSubview(button)
         button.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height-150)
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.viewDidAppear(animated)
+        self.modalPresentationStyle = .fullScreen
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
             if error != nil {
                 // User is not logged in, show log in flow.
             } else {
-                let viewController = segue.destination as! AnalyzingViewController
-                viewController.accessToken = accessToken!
+                self.performSegue(withIdentifier: "loginSuccess", sender: self)
             }
         }
     }
     
     @objc func loginSuccessful() {
-        print(self.presentedViewController)
-        self.navigationController?.popViewController(animated: true)
-        performSegue(withIdentifier: "loginSuccess", sender: self)
+//        print("Log in successful")
+//        self.navigationController?.popViewController(animated: true)
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let analyzingViewController = main.instantiateViewController(identifier: "AnalyzingViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        UIView.transition(with: delegate.window!, duration: 0.5, options: UIView.AnimationOptions.transitionFlipFromRight, animations: {
+            delegate.window?.rootViewController = analyzingViewController
+        }, completion: nil)
     }
     
     /*

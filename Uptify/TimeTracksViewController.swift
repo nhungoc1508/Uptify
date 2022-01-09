@@ -61,6 +61,7 @@ class TimeTracksViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         let viewController = segue.destination as! TopTracksViewController
+        viewController.topTracksAll50 = self.tracksData["top-tracks_all-time"] as! [[String:Any]]
         if segue.identifier == "alltime" {
             viewController.label = "all time"
             viewController.topTracks = self.tracksData["top-tracks_all-time"] as! [[String:Any]]
