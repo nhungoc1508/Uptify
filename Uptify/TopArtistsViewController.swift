@@ -13,6 +13,7 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var topartistsBg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var screenLabel: UILabel!
+    
     var topArtists = [[String:Any]]()
     var topTracks = [[String:Any]]()
     var label = String()
@@ -32,8 +33,6 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         screenLabel.text = "Your top artists of " + label
         
         topartistsBg.applyGradient(colors: [jade0_40, steelBlue0], stops: [0.4, 0.95])
-
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,21 +59,7 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.name.text = (artist["name"] as! String)
         cell.rank.text = String(indexPath.row + 1)
         
-        // cell.button.addTarget(self, action: #selector(showArtistDetail), for: .touchUpInside)
-        // cell.button.addTarget(self, action: #selector(didTapButton(sender:)), for: .touchUpInside)
-        
         return cell
-    }
-    
-    @objc func didTapButton(sender: UIButton) {
-        // Fetch Item
-        if let superview = sender.superview, let cell = superview.superview as? TopArtistsTableViewCell {
-            if let indexPath = tableView.indexPath(for: cell) {
-                let artist = self.topArtists[indexPath.row]
-                print(artist["name"])
-            }
-        }
-        self.performSegue(withIdentifier: "showArtist", sender: self)
     }
     
     @objc func showArtistDetail() {
@@ -98,9 +83,6 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sendBtn = sender as! UIButton
         if let superview = sendBtn.superview, let cell = superview.superview as? TopArtistsTableViewCell {
@@ -115,5 +97,4 @@ class TopArtistsViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         }
     }
-
 }

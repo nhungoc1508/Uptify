@@ -12,11 +12,11 @@ class TimeArtistsViewController: UIViewController {
     @IBOutlet weak var alltime: UIButton!
     @IBOutlet weak var past6months: UIButton!
     @IBOutlet weak var pastmonth: UIButton!
+    
     var artistsData = Dictionary<String, Any>()
     
     let steelBlue0_40 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.4).cgColor
     let mauve0 = UIColor(named: "Mauve0")!.cgColor
-    
     let steelBlue0_75 = UIColor(named: "SteelBlue0")!.withAlphaComponent(0.75).cgColor
     let jade0_75 = UIColor(named: "Jade0")!.withAlphaComponent(0.75).cgColor
     
@@ -39,8 +39,6 @@ class TimeArtistsViewController: UIViewController {
         // pastmonth.subviews.first?.contentMode = .scaleAspectFill
         pastmonth.layer.cornerRadius = 30
         pastmonth.applyGradient(colors: [steelBlue0_75, jade0_75], corner: 30)
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,13 +51,8 @@ class TimeArtistsViewController: UIViewController {
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         let viewController = segue.destination as! TopArtistsViewController
         viewController.topTracks = self.artistsData["top-tracks_all-time"] as! [[String:Any]]
         if segue.identifier == "alltime" {
@@ -73,5 +66,4 @@ class TimeArtistsViewController: UIViewController {
             viewController.topArtists = self.artistsData["top-artists_month"] as! [[String:Any]]
         }
     }
-
 }

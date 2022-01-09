@@ -10,12 +10,14 @@ import SpotifyLogin
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var loginBg: UIImageView!
+    
     let byzantine0_30 = UIColor(named: "Byzantine0")!.withAlphaComponent(0.3).cgColor
     let steelBlue0 = UIColor(named: "SteelBlue0")!.cgColor
     
     override func viewDidLoad() {
-        self.modalPresentationStyle = .fullScreen
         super.viewDidLoad()
+        self.modalPresentationStyle = .fullScreen
+        
         self.loginBg.applyGradient(colors: [byzantine0_30, steelBlue0], stops: [0.0, 0.8])
         
         let button = SpotifyLoginButton(viewController: self, scopes: [.userReadPrivate, .userReadEmail, .userReadTop])
@@ -24,8 +26,6 @@ class HomeViewController: UIViewController {
         button.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height-150)
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         self.modalPresentationStyle = .fullScreen
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
             if error != nil {
-                // User is not logged in, show log in flow.
+                // User is not logged in
             } else {
                 self.performSegue(withIdentifier: "loginSuccess", sender: self)
             }
@@ -41,8 +41,6 @@ class HomeViewController: UIViewController {
     }
     
     @objc func loginSuccessful() {
-//        print("Log in successful")
-//        self.navigationController?.popViewController(animated: true)
         let main = UIStoryboard(name: "Main", bundle: nil)
         let analyzingViewController = main.instantiateViewController(identifier: "AnalyzingViewController")
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
@@ -50,17 +48,6 @@ class HomeViewController: UIViewController {
             delegate.window?.rootViewController = analyzingViewController
         }, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension UIImageView
@@ -72,7 +59,6 @@ extension UIImageView
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         gradientLayer.locations = stops
         gradientLayer.frame = self.bounds
-        // gradientLayer.cornerRadius = 12
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

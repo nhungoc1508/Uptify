@@ -60,8 +60,6 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self?.fetchTopTracks(accessToken: accessToken)
             }
         }
-
-        // Do any additional setup after loading the view.
     }
     
     func fetchArtist(accessToken: String) {
@@ -72,7 +70,6 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
@@ -92,7 +89,6 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
@@ -158,12 +154,7 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.dismiss(animated: true, completion: nil)
     }
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         let cell = sender as! ArtistViewCollectionViewCell
         let collectionView = cell.superview as! UICollectionView
         var track = [String:Any]()
@@ -178,5 +169,4 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate, UICollec
         viewController.track = track
         viewController.topTracksAll50 = self.topTracksAll50
     }
-
 }

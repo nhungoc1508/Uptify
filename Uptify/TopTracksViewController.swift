@@ -9,10 +9,10 @@ import UIKit
 import AlamofireImage
 
 class TopTracksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet weak var toptracksBg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var screenLabel: UILabel!
+    
     var topTracks = [[String:Any]]()
     var topTracksAll50 = [[String:Any]]()
     var label = String()
@@ -33,8 +33,6 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
         screenLabel.text = "Your top tracks of " + label
         
         toptracksBg.applyGradient(colors: [rose0_40, byzantine0], stops: [0.4, 0.9])
-
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,7 +65,6 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
             artistsString.append(artist["name"] as! String)
         }
         let allArtists = artistsString.joined(separator: ", ")
-        // cell.artist.text = (artists[0]["name"] as! String)
         cell.artist.text = allArtists
         
         return cell
@@ -77,18 +74,12 @@ class TopTracksViewController: UIViewController, UITableViewDelegate, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         let sendBtn = sender as! UIButton
         if let superview = sendBtn.superview, let cell = superview.superview as? TopTracksTableViewCell {
             if let indexPath = tableView.indexPath(for: cell) {
                 let track = self.topTracks[indexPath.row]
                 let viewController = segue.destination as! TrackViewController
-                // let trackId = track["id"] as! String
                 viewController.track = track
                 viewController.topTracksAll50 = self.topTracksAll50
             }

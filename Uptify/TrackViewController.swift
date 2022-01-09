@@ -58,11 +58,6 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.albumName.isHidden = false
         self.trackName.text = track["name"] as? String
         self.albumName.text = album["name"] as? String
-        // self.artists = track["artists"] as! [[String:Any]]
-        
-        if self.topTracksAll50.count == 0 {
-            
-        }
         
         SpotifyLogin.shared.getAccessToken { [weak self] (token, error) in
             if error == nil, token != nil {
@@ -70,7 +65,6 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
                 self?.fetchArtists(accessToken: accessToken)
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     func fetchArtists(accessToken: String) {
@@ -87,7 +81,6 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
@@ -122,7 +115,6 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
             request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
             let task = session.dataTask(with: request) { (data, response, error) in
-                // This will run when the network request returns
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let data = data {
@@ -189,13 +181,8 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBAction func onBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "showTrack" {
             let cell = sender as! ArtistViewCollectionViewCell
             let indexPath = self.recTracksView.indexPath(for: cell)!
@@ -214,5 +201,4 @@ class TrackViewController: UIViewController, UICollectionViewDelegate, UICollect
             viewController.topTracksAll50 = self.topTracksAll50
         }
     }
-
 }

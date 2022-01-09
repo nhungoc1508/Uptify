@@ -42,7 +42,6 @@
 		F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */; };
 		F6F13F18278ABA9B00715AFC /* TrackViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */; };
 		F6F13F1A278B567700715AFC /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6F13F19278B567700715AFC /* Keys.plist */; };
-		F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +109,6 @@
 		F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F6F13F17278ABA9B00715AFC /* TrackViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6F13F19278B567700715AFC /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
-		F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +212,6 @@
 				F6EE69F9277CD8C900EDF89C /* LaunchScreen.storyboard */,
 				F6EE69FC277CD8C900EDF89C /* Info.plist */,
 				F6EE6A1E277CDB6800EDF89C /* HomeViewController.swift */,
-				F6FEB9B6277DAACD00E2883E /* SpotifyAPICaller.swift */,
 				F681C4172786D210007E94C3 /* AnalyzingViewController.swift */,
 				F604440F2786E7E300D60FA4 /* CategoryViewController.swift */,
 				F60444132786F88400D60FA4 /* CustomButton.swift */,
@@ -512,7 +509,6 @@
 				F60444142786F88400D60FA4 /* CustomButton.swift in Sources */,
 				F6EE69F1277CD8C700EDF89C /* SceneDelegate.swift in Sources */,
 				F6EE6A1F277CDB6800EDF89C /* HomeViewController.swift in Sources */,
-				F6FEB9B7277DAACD00E2883E /* SpotifyAPICaller.swift in Sources */,
 				F60444182787155300D60FA4 /* TimeTracksViewController.swift in Sources */,
 				F6044420278771DA00D60FA4 /* TopTracksTableViewCell.swift in Sources */,
 				F6A8C7602789A31500A9C983 /* ArtistViewCollectionViewCell.swift in Sources */,
